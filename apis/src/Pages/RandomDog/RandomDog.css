@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(10, 109, 109);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 120px auto;
+}
+
+.text {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    font-size: 60px;
+    font-family: cursive;
+    color: violet;
+}
