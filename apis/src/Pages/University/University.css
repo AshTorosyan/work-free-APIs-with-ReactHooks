@@ -1,0 +1,53 @@
+.univer_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.univer_text_search {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 900;
+    font-family: cursive;
+}
+
+.univer_input {
+    font-size: 40px;
+    color: #fff;
+    background-color: cadetblue;
+    border: 1px solid #555;
+    margin-top: 15px;
+}
+
+.univer_button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 20px;
+    background-color: cadetblue;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    font-family: cursive;
+    transition: .1s linear;
+}
+
+.univer_button:hover {
+    background-color: rgb(29, 75, 77);
+}
+
+.univer_button:active {
+    box-shadow: 4px 5px 4px rgb(29, 75, 77);
+}
+
+.univer_listIem {
+    list-style-type: none;
+}
+
+.univer_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 2px solid rgb(9, 0, 0);
+    margin-top: 10px;
+    color: #fff;
+}

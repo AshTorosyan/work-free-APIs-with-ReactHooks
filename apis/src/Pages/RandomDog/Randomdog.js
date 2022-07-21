@@ -1,39 +1,77 @@
-import { useEffect, useState } from "react";
-import Wrapper from "../../UI/Wrapper/Wrapper.js";
-import Image from "../../Components/Image/Image.js";
-import Card from "../../UI/Card/Card.js";
+// import { useEffect, useState } from "react";
+// import Wrapper from "../../UI/Wrapper/Wrapper.js";
+// import Image from "../../Components/Image/Image.js";
+// import Card from "../../UI/Card/Card.js";
+// import "./RandomDog.css";
+// import Text from "../../Components/Text/Text.js";
+
+import { Component } from "react";
+import Wrapper from "../../UI/Wrapper/Wrapper";
+import Text from "../../Components/Text/Text";
+import Card from "../../UI/Card/Card";
+import Image from "../../Components/Image/Image";
 import "./RandomDog.css";
-import Text from "../../Components/Text/Text.js";
+// const Randomdog = () => {
 
-const Randomdog = () => {
+// const [dog, setDog] = useState("");
 
-const [dog, setDog] = useState("");
-const [isFetched, setIsFetched] = useState(false);
-useEffect(() => {
-fetch("https://dog.ceo/api/breeds/image/random")
-.then(data => data.json())
-.then(result => {
-    console.log(result);
-    setDog({
-        picture: result.message
-    })
-    setIsFetched(true);
-});
 
-},[]);
+// useEffect(() => {
+// fetch("https://dog.ceo/api/breeds/image/random")
+// .then(data => data.json())
+// .then(result => {
+//     console.log(result);
+//     setDog({
+//         picture: result.message
+//     })
+    
+// });
 
-    return (
-     <Wrapper>
-        <Text className="text">Dog Picture</Text>
-        {
-         isFetched && <Card className="card">
-          <Image width="300px" height="300px" src={dog.picture}/>
-          </Card>
-        }
+// },[]);
+
+//     return (
+        
+//            <Wrapper>
+//         <Text className="text">Dog Picture</Text>
+//         <Card className="card">
+//           <Image width="300px" height="300px" src={dog.picture}/>
+//           </Card>
+        
         
        
-     </Wrapper>
-    );
+//      </Wrapper>
+//     );
+// }
+
+class RandomDog extends Component {
+    constructor() {
+        super();
+        this.state = {
+            picture: <img src=""/>
+        }
+    }
+
+    componentWillMount() {
+        fetch("https://dog.ceo/api/breeds/image/random")
+        .then(data => data.json())
+        .then(result => {
+            console.log(result);
+            this.setState({
+                picture: result.message
+            })
+        })
+    }
+
+    render() {
+        return (
+            <Wrapper>
+                 <Text className="text">Dog Picture</Text>
+         <Card className="card">
+           <Image width="300px" height="300px" src={this.state.picture}/>
+          </Card>
+            </Wrapper>
+        )
+    }
 }
 
-export default Randomdog;
+export default RandomDog;

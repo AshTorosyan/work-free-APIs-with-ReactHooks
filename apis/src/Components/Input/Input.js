@@ -5,6 +5,7 @@ const Input = (props) => {
         ref={props.propsRef}
         placeholder={props.placeholder}
         onChange={props.onChange}
+        className={props.className}
         />
     );
 }
